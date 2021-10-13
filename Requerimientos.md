@@ -49,18 +49,17 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 | Gestionar envíos                                       | Registrar envío                                        |  
 |                                                        | Seguir estado del envío                                |   
 |                                                        | Actualizar estado del envío                            |
-| Gestionar usuarios                                     | Validar tipo de usuario (Admin- Cliente)               | 
-|                                                        | Registrar usuarios                                    |
+| Gestionar usuarios                                     | Validar tipo de usuario                                | 
+|                                                        | Registrar usuarios                                     |
 |                                                        | Iniciar sesión de usuarios                             |
 
 ## Clases y características de usuarios
 
-En esta sección se clasifican los usuarios que utilizaran el producto. La clasificación puede ser en función a la frecuencia de uso, grupo de funcionalidades utilizadas, privilegios de seguridad, nivel de experiencia y otros parámetros.
-
-Se puede usar una lista para enumerar los usuarios tipo que utilizarán el software, describiendo las características de cada uno.
-
-Para cada tipo de usuario, se pueden mencionar las funcionalidades de producto (Sección 4) que le sean relevantes. Igualmente se puede hacer mención de cuales usuarios utilizan una mayor parte del sistema y con más frecuencia, para distinguirlos de usuarios ocasionales o que acceden a pocas funcionalidades.
-
+| Usuario                                          | Característica                                |
+|--------------------------------------------------|-----------------------------------------------|
+| Vendedor                                         | Este usuario es el encargado de realizar el registro de nuevas ventas. Además, puede visualizar el valor vendido hasta el momento. Por otro lado, también puede registrar nuevos productos que llegan a la tienda. |
+| Cliente                                          | Usuario quien puede acceder a la plataforma y realizar su registro dentro de la página y realizar compras. |
+| Domiciliario                                     | Usuario quien recibe las órdenes de compra para despachar los pedidos a los clientes. |
 
 ## Entorno operativo
 
