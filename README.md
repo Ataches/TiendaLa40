@@ -4,7 +4,7 @@
 
 - Javier Hospital Melo
 - Norbey Danilo Muñoz
-- Brayan Leonardo Sierra
-- Juan Sebastián Sánchez
 - Camilo Enrique Rocha
+- Juan Sebastián Sánchez
+- Brayan Leonardo Sierra
 - Ivan Daniel Villegas

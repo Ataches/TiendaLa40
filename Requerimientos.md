@@ -1,5 +1,5 @@
 # Tienda la 40
-## Requerimientos
+## Mi cosecha 
 
 ##### Tabla de contenido
 
@@ -41,19 +41,15 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 |--------------------------------------------------------|--------------------------------------------------------|
 | Gestionar ventas                                       | Registrar venta (Facturación corriente)                |
 | Gestionar inventario                                   | Registrar ingreso y salida de mercancía                |
-| Gestionar pedidos                                      |                                                        |
-|                                                        | Solicitar pedidos (Generar un pedido desde el carrito) |
+| Gestionar pedidos                                      | Solicitar pedidos (Generar un pedido desde el carrito) |
 |                                                        | Solicitar pedidos (Generar un pedido desde el carrito) |
 |                                                        | Validar selección de productos                         | 
-| Gestionar pago o transacción                           |                                                        |  
-|                                                        | Validar medio de pago (Efectivo y Tarjeta de crédito)  |
+| Gestionar pago o transacción                           | Validar medio de pago (Efectivo y Tarjeta de crédito)  |
 |                                                        | Validar productos carrito (Aplicar impuesto)           |
-| Gestionar envíos                                       |                                                        |   
-|                                                        | Registrar envío                                        |  
+| Gestionar envíos                                       | Registrar envío                                        |  
 |                                                        | Seguir estado del envío                                |   
 |                                                        | Actualizar estado del envío                            |
-| Gestionar usuarios                                     |                                                        |
-|                                                        | Actualización del estado del envío                     |
+| Gestionar usuarios                                     | Actualización del estado del envío                     |
 |                                                        | Validar tipo de usuario (Admin- Cliente)               | 
 |                                                        | Registro e inicio de sesión de usuarios                |
 
