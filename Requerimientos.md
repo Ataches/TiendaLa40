@@ -49,9 +49,9 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 | Gestionar envíos                                       | Registrar envío                                        |  
 |                                                        | Seguir estado del envío                                |   
 |                                                        | Actualizar estado del envío                            |
-| Gestionar usuarios                                     | Actualización del estado del envío                     |
-|                                                        | Validar tipo de usuario (Admin- Cliente)               | 
-|                                                        | Registro e inicio de sesión de usuarios                |
+| Gestionar usuarios                                     | Validar tipo de usuario (Admin- Cliente)               | 
+|                                                        | Registrar usuarios                                    |
+|                                                        | Iniciar sesión de usuarios                             |
 
 ## Clases y características de usuarios
 
