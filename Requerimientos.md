@@ -17,25 +17,45 @@
 
 ## Propósito 
 
-En esta sección se define el nombre o título del software que se está especificado en el documento, incluyendo su número de versión o Release.
+Sistema de gestión de ventas La 40.
 
-Luego se describe cuales componentes o partes del alcance del producto están incluidas en el documento, estableciendo si este documento cubre la totalidad del software, sólo una parte del sistema, subsistema o subgrupo de procesos.
+La 40 es un punto de abastecimiento local cuyo objeto social es la comercialización de productos en el sector en el cual se encuentra ubicado.  Sus administradores solicitan el diseño e implementación de un sistema de información que le permita administrar la operación de venta de sus productos. 
+
+El objetivo consiste en construir un sistema de información que permita gestionar las ventas de los productos de la organización, que abarque desde las solicitudes de pedido hasta el despacho de los productos. Para ello, se busca desarrollar una herramienta que permita el registro de las ventas, la gestión de productos, la gestión de pagos y la gestión de envíos de la mercancía, los cuales son los componentes principales que se consideran en el primer avance del sistema. 
 
 
 ## Alcance del software
 
-Se incluye una corta descripción del alcance del software que se está especificando, incluyendo:
+En el sistema de información se busca desarrollar las actividades relacionadas con la gestión de las ventas de la tienda de La 40, incluyendo la gestión de pedidos, gestión de pagos y gestión de envío de productos.
 
-Su propósito u objetivo general.
-Beneficios que brinda al área de negocio y organización.
-Objetivos y metas. Es recomendable establecer la relación de los objetivos del software con los objetivos corporativos y estrategias de negocio.
-Se puede hacer referencia a otros documentos, por ejemplo una definición de alcance u acta de constitución del proyecto.
+Por lo anteriormente mencionado, el sistema de información no realizará operaciones de reembolsos o devoluciones de pedidos, modificaciones puntuales a las ventas, buzón quejas o reclamos y/o sugerencias respecto a los pedidos o relacionados, entre otros.
+
+Se espera que el producto software beneficie a la tienda en su organización como punto de abastecimiento local de productos de la canasta familiar, así como en la posibilidad de la reactivación económica a través de nuevos canales digitales que se acoplen a los contenidos emergentes de las tecnologías de la información y las comunicaciones a nivel local, regional o nacional.
 
 ## Funcionalidades del producto
 Lista de las funcionalidades del software que se están especificando en el documento de requerimientos. Cada funcionalidad puede estar compuesta por uno o varios requerimientos funcionales de software.
 
 Aquí solo se incluye una lista numerada de las principales funcionalidades, la información detallada de requerimientos funcionales se documenta en la sección 7 de este documento.
 
+| Funcionalidad                                          | Requerimiento funcional                                |
+|--------------------------------------------------------|--------------------------------------------------------|
+| Gestionar ventas                                       | Registrar venta (Facturación corriente)                |
+| Gestionar inventario                                   | Registrar ingreso y salida de mercancía                |
+| Gestionar pedidos                                      |                                                        |
+|                                                        | Solicitar pedidos (Generar un pedido desde el carrito) |
+|                                                        | Solicitar pedidos (Generar un pedido desde el carrito) |
+|                                                        | Validar selección de productos                         | 
+| Gestionar pago o transacción                           |                                                        |  
+|                                                        | Validar medio de pago (Efectivo y Tarjeta de crédito)  |
+|                                                        | Validar productos carrito (Aplicar impuesto)           |
+| Gestionar envíos                                       |                                                        |   
+|                                                        | Registrar envío                                        |  
+|                                                        | Seguir estado del envío                                |   
+|                                                        | Actualizar estado del envío                            |
+| Gestionar usuarios                                     |                                                        |
+|                                                        | Actualización del estado del envío                     |
+|                                                        | Validar tipo de usuario (Admin- Cliente)               | 
+|                                                        | Registro e inicio de sesión de usuarios                |
 
 ## Clases y características de usuarios
 
@@ -78,24 +98,14 @@ Es recomendable incluir como el software debe responder a condiciones de error y
 
 Cada requerimiento debe ser identificado unívocamente, para lo cual se recomienda usar un número de secuencia, que tenga algún significado y de formato común a toda la organización. Por ejemplo:
 
-REQ-1:
+### REQ-1:
+
+Para el funcionamiento de la aplicación se espera que el tiempo de respuesta sea imperceptible por el usuario final. Con este propósito, la aplicación considerada debe poseer un tiempo de respuesta menor o igual a 5 segundos.
+
+- Criterios de aceptación:
 
 
-REQ-2:
-
-
-REQ-3:
-
-Para ver algunos ejemplos de cómo se redactan los requerimientos funcionales, te recomendamos el siguiente enlace:
-
-> 40 Ejemplos de requerimientos funcionales de software
-
-9.2.    (Nombre de la funcionalidad 2)
-
-Seguir los mismos lineamientos de la funcionalidad 1 para tantas funcionalidades tenga el sistema.
-
-9.3.    (Nombre de la funcionalidad N)
-Seguir los mismos lineamientos de la funcionalidad 1 para tantas funcionalidades tenga el sistema.
+La aplicación debe tener un tiempo de respuesta como máximo de 5 segundos en todas las tareas que tenga. De lo contrario, se considera que la aplicación no tiene el tiempo de respuesta esperado.
 
 ## Reglas de negocio
 
