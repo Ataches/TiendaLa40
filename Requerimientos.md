@@ -1,18 +1,45 @@
 # Tienda la 40
-## Mi cosecha 
+## Requerimientos funcionales y no funcionales
 
-##### Tabla de contenido
+- [Tienda la 40](#tienda-la-40)
+  - [Requerimientos funcionales y no funcionales](#requerimientos-funcionales-y-no-funcionales)
+  - [Propósito](#propósito)
+  - [Alcance del software](#alcance-del-software)
+  - [Funcionalidades del producto](#funcionalidades-del-producto)
+  - [Clases y características de usuarios](#clases-y-características-de-usuarios)
+  - [Entorno operativo](#entorno-operativo)
+  - [Requerimientos funcionales](#requerimientos-funcionales)
+    - [Gestionar ventas](#gestionar-ventas)
+      - [Descripción](#descripción)
+      - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado)
+      - [Requerimientos funcionales](#requerimientos-funcionales-1)
+    - [Gestionar Inventario](#gestionar-inventario)
+      - [Descripción](#descripción-1)
+      - [Acciones y comportamiento esperado](#acciones-y-comportamiento-esperado)
+      - [Requerimientos funcionales](#requerimientos-funcionales-2)
+    - [Gestionar pedidos](#gestionar-pedidos)
+      - [Descripción](#descripción-2)
+      - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-1)
+      - [Requerimientos funcionales](#requerimientos-funcionales-3)
+    - [Gestionar Pago o Transacción](#gestionar-pago-o-transacción)
+      - [Descripción](#descripción-3)
+      - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-2)
+      - [Requerimientos funcionales](#requerimientos-funcionales-4)
+    - [Gestionar Envíos](#gestionar-envíos)
+      - [Descripción](#descripción-4)
+      - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-3)
+      - [Requerimientos funcionales](#requerimientos-funcionales-5)
+    - [Gestionar Usuarios](#gestionar-usuarios)
+      - [Definición](#definición)
+      - [__Caso 1__](#caso-1)
+        - [Acciones iniciadas, comportamiento esperado](#acciones-iniciadas-comportamiento-esperado)
+        - [Requerimientos](#requerimientos)
+      - [Caso 2](#caso-2)
+        - [Acciones iniciadoras, comportamiento esperado](#acciones-iniciadoras-comportamiento-esperado)
+        - [Requerimientos](#requerimientos-1)
+  - [Requerimientos no funcionales](#requerimientos-no-funcionales)
+    - [Tiempo de espera](#tiempo-de-espera)
 
-- [Propósito](#Propósito)  
-- [Alcance del software](#alcance-del-software)  
-- [Funcionalidades del producto](#Funcionalidades-del-producto)  
-- [Clases y características de usuarios](#Clases-y-características-de-usuarios)  
-- [Entorno operativo](#Entorno-operativo)  
-- [Requerimientos funcionales](#Requerimientos-funcionales)  
-- [Reglas de negocio](#Reglas-de-negocio)  
-- [Requerimientos no funcionales](#Requerimientos-no-funcionales)
-- [Otros requerimientos](#Otros-requerimientos)
-- [Glosario](#Glosario)
 
 
 ## Propósito 
@@ -41,9 +68,8 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 |--------------------------------------------------------|--------------------------------------------------------|
 | Gestionar ventas                                       | Registrar venta (Facturación corriente)                |
 | Gestionar inventario                                   | Registrar ingreso y salida de mercancía                |
-| Gestionar pedidos                                      | Solicitar pedidos (Generar un pedido desde el carrito) |
-|                                                        | Solicitar pedidos (Generar un pedido desde el carrito) |
-|                                                        | Validar selección de productos                         | 
+| Gestionar pedidos                                      | Visualizar el estado actual de los pedidos             |
+|                                                        | Validar el estado actual de los pedidos                |
 | Gestionar pago o transacción                           | Validar medio de pago (Efectivo y Tarjeta de crédito)  |
 |                                                        | Validar productos carrito (Aplicar impuesto)           |
 | Gestionar envíos                                       | Registrar envío                                        |  
@@ -58,7 +84,7 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 | Usuario                                          | Característica                                |
 |--------------------------------------------------|-----------------------------------------------|
 | Vendedor                                         | Este usuario es el encargado de realizar el registro de nuevas ventas. Además, puede visualizar el valor vendido hasta el momento. Por otro lado, también puede registrar nuevos productos que llegan a la tienda. |
-| Cliente                                          | Usuario quien puede acceder a la plataforma y realizar su registro dentro de la página y realizar compras. |
+| Cliente                                          | Usuario quien puede acceder a la plataforma y realizar su registro dentro de la página y así como efectuar compras. |
 | Domiciliario                                     | Usuario quien recibe las órdenes de compra para despachar los pedidos a los clientes. |
 
 ## Entorno operativo
@@ -67,49 +93,232 @@ En esta sección se describe el entorno operativo en el que se desenvolverá el 
 
 ## Requerimientos funcionales
 
-Los requerimientos funcionales de un sistema, son aquellos que describen cualquier actividad que este deba realizar, en otras palabras, el comportamiento o función particular de un sistema o software cuando se cumplen ciertas condiciones.
+### Gestionar ventas
 
-En esta sección de la plantilla, ilustramos como organizar los requerimientos funcionales de software por funcionalidad de producto o sistema. Aquí se listan las funcionalidades y para cada una a su vez se listan los requerimientos funcionales.
+#### Descripción 
 
-Los requerimientos funcionales también se pueden documentar en una matriz de trazabilidad de requerimientos. Sigue el siguiente enlace y te mostramos una plantilla:
+Esta funcionalidad permite la gestión de los registros de las distintas transacciones que involucran a las ventas efectuadas a través del sistema; la venta consiste en el conjunto de información que relaciona el pedido, el pago y el envío. De esta forma, la funcionalidad permite manipular la información de una venta en sus diferentes fases. 
 
-> Plantilla de matriz de trazabilidad de requerimientos
+> __Prioridad__ alto
 
-A continuación se muestra como documentar cada funcionalidad:
-9.1.    (Nombre de la funcionalidad 1)
-En el título de la funcionalidad, se recomienda utilizar nombres lo más descriptivo posible para cada funcionalidad. No limitarse a nombrarlas “Funcionalidad 1”. Un buen ejemplo podría ser “Autorización de pedido de compra”.
 
-Descripción: Descripción corta de la funcionalidad.
+#### Acciones iniciadoras y comportamiento esperado
 
-Prioridad: Nivel bajo, medio o alto de prioridad. Esta debe ser establecida por el área funcional.
+- Es necesaria la existencia de registros de información, total o parcial, asociados a una venta: pedido o solicitud de pedido, con cantidad y producto; monto de la venta, estado de pago y medio de pago; información del cliente; estado del envío.
+- El usuario vendedor busca la información de una venta en particular en el sistema a través de un identificador único de venta o factura. 
+- El usuario cliente inicia la compra, entonces el sistema crea el registro de la venta.
+- Se espera que el sistema registre la venta.
+- Se espera del sistema la respuesta a la consulta realizada, obteniendo la información de la venta y su estado o trazabilidad. 
+- El sistema debe otorgar alguna información que brinde valor al usuario, como la factura, la fecha y hora, la cantidad de productos, el monto, el estado del pago, la información del cliente.
 
-Acciones iniciadoras y comportamiento esperado: Secuencia de acciones de usuario y respuestas esperadas del sistema para esta funcionalidad.
+#### Requerimientos funcionales
 
-Requerimientos funcionales: Lista detallada de los requerimientos funcionales asociados a esta funcionalidad.
+__REQ-1-F1__: Registro de ventas
+- El sistema debe crear la venta con un identificador único. 
+- El sistema debe capturar y asociar a la venta la información del usuario cliente que inicia la operación.
+- El sistema debe registrar la información de fecha y hora en la que da inicio a la operación. 
+- El sistema debe almacenar toda la información relacionada al pedido y actualizar el estado de la operación.
+- El sistema debe almacenar la información del medio de pago, el monto y actualizar el estado de la operación cuando se efectúe el pago. 
+- El sistema debe almacenar la información relacionada con el despacho del pedido y actualizar el estado de la operación.
+- El sistema debe generar la factura con toda la información de la venta __una vez se ha realizado el pago__.
+- La factura debe ser generada por el sistema tomando la información de la venta asociada al usuario que la realiza.
+- El sistema debe almacenar la factura de la venta.
 
-Para cada requerimiento funcional se establece como debe mostrarse el software y cuales comportamientos debe desempeñar para que el usuario pueda realizar la función que necesita.
+__REQ-2-F1__: Consulta de ventas
+- El sistema debe permitir recibir el identificador único de la factura para la consulta.
+- El sistema debe buscar el registro con el identificador único ingresado.
+- El sistema debe traer la información de la factura de la venta o en su defecto la factura misma. 
+- El sistema puede permitir traer el registro de la venta para visualización de los campos sin la estructura de la factura. 
 
-Es recomendable incluir como el software debe responder a condiciones de error y entradas de datos inválidas.
+### Gestionar Inventario
 
-Cada requerimiento debe ser identificado unívocamente, para lo cual se recomienda usar un número de secuencia, que tenga algún significado y de formato común a toda la organización. Por ejemplo:
+#### Descripción 
 
-### REQ-1:
+Con esta funcionalidad el vendedor podrá hacer gestión de la entrada y salida de productos del inventario, esta gestión de inventario puede ser automática en el proceso de generar el pedido o también de manera manual en el proceso en el que se genere un pedido manual como por ejemplo cuando llega alguien que no tiene contacto con la plataforma virtual sino que es un usuario promedio de la tienda.
+
+> __Prioridad__: alto
+
+#### Acciones y comportamiento esperado
+- Usuario(Cliente): Al generar el pedido se envía para verificarse con el sistema.
+- Sistema:El sistema deberá descontar del inventario el producto, en caso de que si exista. Para el otro caso deberá existir o aparecer una advertencia de que el producto deseado no existe o no se encuentra en la cantidad deseada.
+- Usuario(Vendedor): El vendedor deberá ser el encargado de ingresar o retirar elementos del inventario. Solo se podrá retirar en los casos que se genere un pedido físico.
+
+#### Requerimientos funcionales
+
+__REQ-1-F2__: Añadir productos al inventario
+
+- El sistema muestra un formulario para añadir el producto
+- El sistema deberá mostrar si el producto ya está creado, en dado caso que si solo se aceptará añadir una cantidad del producto.
+- El sistema deberá mostrar la lista de productos, su cantidad, su descripción y su precio.
+- El sistema deberá mostrar los cambios realizados.
+
+__REQ-2-F2__: Retirar productos al inventario
+
+- El sistema dejará retirar productos del inventario si se genera un pedido de venta y posteriormente una factura.
+- El sistema dejará retirar productos solo si existe en el inventario la cantidad deseada.
+- El sistema descontará el producto del inventario cuando se desee retirar.
+- El sistema deberá mostrar los cambios realizados.
+
+__REQ-3-F2__: Verificar productos existentes en el inventario
+- El sistema deberá verificar si el producto existe o no - en el inventario
+- El sistema deberá verificar que el producto existe en la cantidad deseada.
+
+
+### Gestionar pedidos
+
+#### Descripción 
+
+con esta funcionalidad el vendedor podrá visualizar los pedidos hechos por los clientes, el domiciliario podrá visualizar los pedidos a su nombre y el cliente podrá visualizar y/o validar el estado de su pedido (Recibido, en preparación, pago fallido, enviado, entregado, cancelado, no entregado).
+
+> __Prioridad__: medio
+
+#### Acciones iniciadoras y comportamiento esperado
+- Usuario (cliente): Puede visualizar el estado actual de los pedidos realizados.
+- Sistema: Muestra el estado de los pedidos al cliente.
+- Usuario (vendedor): Logra visualizar los estados de los pedidos.
+- Usuario (domiciliario): Logra visualizar los estados de los pedidos asignados para entrega o el histórico de pedidos entregados a su nombre.
+
+#### Requerimientos funcionales
+
+__REQ-1-F3__: Visualizar estado actual de los pedidos
+- El sistema muestra el listado de los pedidos para cada uno de los actores.
+
+__REQ-2-F3__: Validar el estado de los pedidos
+- El sistema da la opción de cancelación a cada uno de los actores, para el caso del domiciliario da la opción de aceptar o rechazar la oferta.
+- El sistema de forma automática asigna a la persona domiciliaria.
+Según el estado del pedido da la opción al cliente de modificar su pedido.
+
+### Gestionar Pago o Transacción
+
+#### Descripción 
+
+Permite realizar el pago correspondiente a la compra, de acuerdo al valor indicado en la factura de pago. También se contempla la elección de forma de pago (en efectivo o con tarjeta de crédito). 
+
+> __Prioridad__: medio
+
+#### Acciones iniciadoras y comportamiento esperado
+- Sistema: genera factura de venta.
+- Usuario (cliente): elige forma de pago (en efectivo o con tarjeta de crédito)
+- Caso 1 (Pago en efectivo):
+  - Sistema:  genera orden de pago.
+  - Usuario (Domiciliario):gestionar envío.
+  - Usuario (cliente): realiza pago contra entrega del pedido.
+  - Usuario (Vendedor): actualiza estado de la factura de venta a: pagado.
+- Caso 2 (pago con tarjeta de crédito):
+  - Sistema: Presenta interfaz de pago electrónico.
+  - Usuario (cliente): Realiza pago electrónico.
+  - Sistema: actualiza estado de la factura de venta a: pagado.
+  - Usuario (Domiciliario):gestionar envío.
+
+#### Requerimientos funcionales
+
+__REQ-1-F4__: Elegir forma de pago del pedido (Efectivo o Tarjeta de crédito). 
+
+- El software debe mostrar las opciones de pago posterior a la generación de la factura de venta.
+- En caso de no seleccionar forma de pago, el sistema no permite continuar con la transacción.
+
+__REQ-2-F4__: Calcular el valor a pagar.
+
+- De acuerdo a la forma de pago seleccionada, el sistema debe calcular el valor a pagar, aplicando los impuestos y costes adicionales necesarios.
+- Si la transacción se cancela, la factura de venta quedará en estado: sin pagar.
+
+__REQ-3-F4__: Registrar pago del pedido.
+- Una vez se haya realizado el pago del pedido, el sistema debe registrar y efectuar el cambio de estado de la factura de venta a: pagado. En caso de ser pago contra entrega, se debe realizar el cambio de forma manual por parte del vendedor.
+- Si el pago no se realiza, la factura de venta no cambia de estado.
+
+### Gestionar Envíos
+
+#### Descripción 
+
+Permite al cliente conocer el estado de envío en que se encuentra su pedido (Recibido, Alistamiento, Enviado, Entregado, Cancelado, No entregado), el cual es actualizado por el vendedor o Domiciliario.
+
+> __Prioridad__: medio
+
+#### Acciones iniciadoras y comportamiento esperado 
+
+- El registro del envío se registra con estado inicial de: Recibido, cuando se confirma el pedido.
+- Los usuarios cliente, vendedor y domiciliario, pueden consultar en cualquier momento el estado de los envíos asociados a pedidos.
+- Los usuarios vendedor y domiciliario pueden actualizar el estado del envío y el sistema debe realizar el cambio y el registro de la hora actual.
+
+#### Requerimientos funcionales
+
+__REQ-1-F5__: Registro del envío
+
+- El sistema registrará el estado del envío como: recibido, cuando el pedido esté confirmado.
+- El sistema almacenará la hora del registro del envío.
+- Al ingresar el envío, todo envío estará asociado a un pedido de venta.
+- A cada envío se le asignará un identificador único, que será utilizado para identificarlo en todos los procesos subsecuentes que se realicen sobre este.
+
+__REQ-2-F5__: Seguimiento del estado del envío
+
+- Se permitirá el seguimiento de los envíos asociados a pedidos de compra, desde la interfaz del cliente, del vendedor y de domiciliario.
+
+__REQ-3-F5__: Actualización del estado del envío
+- Se permitirá el cambio de estado de un envío por parte del vendedor o domiciliario.
+- El sistema permitirá cambiar o actualizar el estado del envío.
+- El sistema almacenará la hora del cambio del estado del envío.
+
+### Gestionar Usuarios
+
+#### Definición
+
+Permite al dueño de la tienda conocer la información del cliente (nombre, dirección, teléfono de contacto, información de compra) que ha solicitado el pedido.
+
+> __Prioridad__: alto
+
+#### __Caso 1__
+     
+    El usuario debe registrarse y tener una cuenta para realizar los pedidos.
+
+##### Acciones iniciadas, comportamiento esperado
+
+- El cliente debe poder generar un nuevo usuario
+- El cliente  debe entrar con su usuario registrado para hacer la compra.
+- El usuario puede ingresar cuando quiera y ver su información, el estado de su pedido (si aplica) y demás opciones que este tenga.
+- El usuario debe poder cambiar las credenciales y su información cuando lo desee siempre y cuando ya esté dentro de su perfil.
+- El usuario puede gestionar sus compras, o pedir nuevas desde su perfil.
+  
+##### Requerimientos
+
+__Req 1-F6__: Creación de usuario
+
+- Debe permitir crear un perfil nuevo al llenar un formulario. Esto para generar un usuario.
+
+__Req 2-F6__: Acceso de usuario
+
+- Debe permitir al usuario entrar a una interfaz donde pueda realizar los pedidos, ver el seguimiento de estos y actualizar sus datos.
+ 
+__Req 3-F6__: Interfaz de usuario.
+
+- La interfaz de usuario permite acceder a diferentes herramientas únicas del tipo de usuario, el vendedor o administrador podrá acceder a la información de todos los usuarios, pero un usuario, puede acceder únicamente a su propia información.
+ 
+ 
+#### Caso 2
+    
+    El usuario debe llenar un formulario con información básica para el envío del pedido, pero no tendrá una cuenta en la aplicación.
+
+##### Acciones iniciadoras, comportamiento esperado
+
+- El cliente debe poder llenar los datos de envío tras seleccionar los productos que desea llevar.
+- El cliente puede elegir el medio de pago que más le favorezca dentro del formulario.
+- El usuario puede hacer seguimiento a su pedido con el número de compra.
+
+##### Requerimientos
+
+__Req 1-F6.2__: El usuario no necesita un perfil:
+
+- Para que el usuario solicite un producto solo debe diligenciar un formulario con nombre, teléfono, dirección y forma de pago de los productos solicitados.
+- El formulario no se puede enviar sin rellenar los datos Nombre, teléfono, dirección y de medio de pago. 
+- El formulario debe generar y mostrar un número de compra, para que el cliente pueda hacer un seguimiento del estado del producto.
+
+
+## Requerimientos no funcionales
+
+__REQ-1__:
+### Tiempo de espera
 
 Para el funcionamiento de la aplicación se espera que el tiempo de respuesta sea imperceptible por el usuario final. Con este propósito, la aplicación considerada debe poseer un tiempo de respuesta menor o igual a 5 segundos.
 
 - Criterios de aceptación:
 
-
 La aplicación debe tener un tiempo de respuesta como máximo de 5 segundos en todas las tareas que tenga. De lo contrario, se considera que la aplicación no tiene el tiempo de respuesta esperado.
-
-## Reglas de negocio
-
-Listado de reglas y principios que aplican a todo el conjunto de requerimientos de software contenidos en el documento. Un ejemplo es cuales individuos o roles pueden desempeñar cierta función bajo ciertas circunstancias.
-Para hacer cumplir las reglas de negocio, podría ser necesaria la definición de requerimientos funcionales que aplican a todo el sistema, no a una funcionalidad especifica.
-
-
-## Otros requerimientos
-Requerimientos no cubiertos en ninguna otra sección del documento de requerimientos de software, por ejemplo: Requerimientos de bases de datos, internacionalización, legales y objetivos de reúso de componentes de software.
-
-## Glosario
-Descripción de términos y siglas necesarias para el entendimiento del documento de requerimientos de software.
