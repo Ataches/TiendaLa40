@@ -63,20 +63,21 @@ Lista de las funcionalidades del software que se están especificando en el docu
 
 Aquí solo se incluye una lista numerada de las principales funcionalidades, la información detallada de requerimientos funcionales se documenta en la sección 7 de este documento.
 
-| Funcionalidad                                          | Requerimiento funcional                                |
-|--------------------------------------------------------|--------------------------------------------------------|
-| Gestionar ventas                                       | Registrar venta (Facturación corriente)                |
-| Gestionar inventario                                   | Registrar ingreso y salida de mercancía                |
-| Gestionar pedidos                                      | Visualizar el estado actual de los pedidos             |
-|                                                        | Validar el estado actual de los pedidos                |
-| Gestionar pago o transacción                           | Validar medio de pago (Efectivo y Tarjeta de crédito)  |
-|                                                        | Validar productos carrito (Aplicar impuesto)           |
-| Gestionar envíos                                       | Registrar envío                                        |  
-|                                                        | Seguir estado del envío                                |   
-|                                                        | Actualizar estado del envío                            |
-| Gestionar usuarios                                     | Validar tipo de usuario                                | 
-|                                                        | Registrar usuarios                                     |
-|                                                        | Iniciar sesión de usuarios                             |
+| Funcionalidad                                          | Requerimiento funcional                                  |
+|--------------------------------------------------------|----------------------------------------------------------|
+| Gestionar ventas                                       | Registrar venta (Facturación corriente)                  |
+| Gestionar inventario                                   | Registrar ingreso y salida de mercancía                  |
+| Gestionar pedidos                                      | Visualizar el estado actual de los pedidos               |
+|                                                        | Validar el estado actual de los pedidos                  |
+| Gestionar pago o transacción                           | Elegir la forma de pago (Efectivo o Tarjeta de crédito)  |
+|                                                        | Calcular el valor a pagar (Aplicar impuesto)             |
+|                                                        | Registrar pago del pedido.                               |
+| Gestionar envíos                                       | Registrar envío                                          |  
+|                                                        | Seguir estado del envío                                  |   
+|                                                        | Actualizar estado del envío                              |
+| Gestionar usuarios                                     | Validar tipo de usuario                                  | 
+|                                                        | Registrar usuarios                                       |
+|                                                        | Iniciar sesión de usuarios                               |
 
 ## Clases y características de usuarios
 
