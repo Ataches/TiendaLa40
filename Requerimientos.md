@@ -215,7 +215,7 @@ __REQ-1-F4__: Elegir forma de pago del pedido (Efectivo o Tarjeta de crédito).
 
 __REQ-2-F4__: Calcular el valor a pagar.
 
-- De acuerdo a la forma de pago seleccionada, el sistema debe calcular el valor a pagar, aplicando los impuestos y costes adicionales necesarios.
+- De acuerdo a la forma de pago seleccionada, el sistema debe calcular nuevamente el valor a pagar, agregando cargos adicionales como impuestos y costes de envío.
 - Si la transacción se cancela, la factura de venta quedará en estado: sin pagar.
 
 __REQ-3-F4__: Registrar pago del pedido.
