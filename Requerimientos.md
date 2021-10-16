@@ -7,7 +7,6 @@
   - [Alcance del software](#alcance-del-software)
   - [Funcionalidades del producto](#funcionalidades-del-producto)
   - [Clases y características de usuarios](#clases-y-características-de-usuarios)
-  - [Entorno operativo](#entorno-operativo)
   - [Requerimientos funcionales](#requerimientos-funcionales)
     - [Gestionar ventas](#gestionar-ventas)
       - [Descripción](#descripción)
@@ -86,10 +85,6 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 | Vendedor                                         | Este usuario es el encargado de realizar el registro de nuevas ventas. Además, puede visualizar el valor vendido hasta el momento. Por otro lado, también puede registrar nuevos productos que llegan a la tienda. |
 | Cliente                                          | Usuario quien puede acceder a la plataforma y realizar su registro dentro de la página y así como efectuar compras. |
 | Domiciliario                                     | Usuario quien recibe las órdenes de compra para despachar los pedidos a los clientes. |
-
-## Entorno operativo
-
-En esta sección se describe el entorno operativo en el que se desenvolverá el sistema, software, módulo o grupo de funcionalidades, mencionando aspectos como la plataforma de hardware, versiones de sistema operativo y otros sistemas o componentes con los que debe coexistir.
 
 ## Requerimientos funcionales
 
