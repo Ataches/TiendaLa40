@@ -317,3 +317,21 @@ Para el funcionamiento de la aplicación se espera que el tiempo de respuesta se
 - Criterios de aceptación:
 
 La aplicación debe tener un tiempo de respuesta como máximo de 5 segundos en todas las tareas que tenga. De lo contrario, se considera que la aplicación no tiene el tiempo de respuesta esperado.
+
+__REQ-2__:
+### Concurrencia
+
+Para el funcionamiento de la aplicación se espera que diferentes usuarios puedan estar en el sitio web sin percibir fallas. Por lo tanto, el sistema debe ser capaz de operar adecuadamente con hasta 20 sesiones concurrentes.
+
+- Criterios de aceptación:
+
+La aplicación debe estar en capacidad de responder las peticiones de hasta 20 sesiones de manera concurrente. De lo contrario, se considera que la aplicación no cumple con el nivel de concurrencia esperado.
+
+__REQ-3__:
+### Pruebas
+
+Las pruebas de software se gestionarán con una herramienta de gestión de software testing.
+
+- Criterios de aceptación:
+
+Las pruebas de la aplicación deben ser realizadas por medio de una herramienta de gestión de gestión de software testing. De lo contrario, se considera que la aplicación no cumple con el nivel de confiabilidad y robustez esperado.
