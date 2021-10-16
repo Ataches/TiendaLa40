@@ -310,7 +310,7 @@ __Req 1-F6.2__: El usuario no necesita un perfil:
 
 ## Requerimientos no funcionales
 
-__REQ-1__:
+__REQNF-1__:
 ### Tiempo de espera
 
 Para el funcionamiento de la aplicación se espera que el tiempo de respuesta sea imperceptible por el usuario final. Con este propósito, la aplicación considerada debe poseer un tiempo de respuesta menor o igual a 5 segundos.
@@ -319,7 +319,7 @@ Para el funcionamiento de la aplicación se espera que el tiempo de respuesta se
 
 La aplicación debe tener un tiempo de respuesta como máximo de 5 segundos en todas las tareas que tenga. De lo contrario, se considera que la aplicación no tiene el tiempo de respuesta esperado.
 
-__REQ-2__:
+__REQNF-2__:
 ### Concurrencia
 
 Para el funcionamiento de la aplicación se espera que diferentes usuarios puedan estar en el sitio web sin percibir fallas. Por lo tanto, el sistema debe ser capaz de operar adecuadamente con hasta 20 sesiones concurrentes.
@@ -328,7 +328,7 @@ Para el funcionamiento de la aplicación se espera que diferentes usuarios pueda
 
 La aplicación debe estar en capacidad de responder las peticiones de hasta 20 sesiones de manera concurrente. De lo contrario, se considera que la aplicación no cumple con el nivel de concurrencia esperado.
 
-__REQ-3__:
+__REQNF-3__:
 ### Pruebas
 
 Las pruebas de software se gestionarán con una herramienta de gestión de software testing.
@@ -337,7 +337,7 @@ Las pruebas de software se gestionarán con una herramienta de gestión de softw
 
 Las pruebas de la aplicación deben ser realizadas por medio de una herramienta de gestión de gestión de software testing. De lo contrario, se considera que la aplicación no cumple con el nivel de confiabilidad y robustez esperado.
 
-__REQ-4__:
+__REQNF-4__:
 ### Seguridad
 
 La aplicación debe manejar criterios mínimos de seguridad y patrones de programación que permitan garantizar la integridad de la información en el manejo de datos. 
@@ -348,3 +348,11 @@ La aplicación debe manejar criterios mínimos de seguridad y patrones de progra
   - Utilizar protocolos de autenticación y autorización que garanticen la integridad de datos de usuario en el intercambio de información de extremo a extremo.
   - Creación y asignación de roles según el tipo de usuario.
 
+__REQNF-4__:
+### Persistencia
+
+Toda la información relacionada al sistema, que está involucrada en las operaciones de los diferentes componentes, debe ser manejada y almacenada mediante el sistema de base de datos NoSQL orientado a documentos MongoDB.
+
+- Criterios de aceptación:
+  - La información debe ser almacenada en las colecciones definidas en el modelo de datos del sistema.
+  - La información debe ser manipulable a través de las diferentes operaciones del sistema de base de datos.
