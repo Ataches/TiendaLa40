@@ -343,9 +343,8 @@ __REQ-4__:
 La aplicación debe manejar criterios mínimos de seguridad y patrones de programación que permitan garantizar la integridad de la información en el manejo de datos. 
 
 - Criterios de aceptación:
-
-- No presentar antipatrones de diseño que comprometan la integridad del aplicativo.
-- No incluir Hard-code en el código fuente del aplicativo (incrustar datos directamente en el código).
-- Utilizar protocolos de autenticación y autorización que garanticen la integridad de datos de usuario en el intercambio de información de extremo a extremo.
-- Creación y asignación de roles según el tipo de usuario.
+  - No presentar antipatrones de diseño que comprometan la integridad del aplicativo.
+  - No incluir Hard-code en el código fuente del aplicativo (incrustar datos directamente en el código).
+  - Utilizar protocolos de autenticación y autorización que garanticen la integridad de datos de usuario en el intercambio de información de extremo a extremo.
+  - Creación y asignación de roles según el tipo de usuario.
 
