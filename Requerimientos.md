@@ -188,38 +188,39 @@ Según el estado del pedido da la opción al cliente de modificar su pedido.
 
 #### Descripción 
 
-Permite realizar el pago correspondiente a la compra, de acuerdo al valor indicado en la factura de pago. También se contempla la elección de forma de pago (en efectivo o con tarjeta de crédito). 
+Permite realizar el pago correspondiente a la compra, de acuerdo al valor de pago calculado, que varía dependiendo de la forma de pago y los impuestos que se apliquen. También se contemplan diferentes acciones dependiendo de la forma de pago (en efectivo o con tarjeta de crédito) elegida.  
 
 > __Prioridad__: medio
 
 #### Acciones iniciadoras y comportamiento esperado
-- Sistema: genera factura de venta.
-- Usuario (cliente): elige forma de pago (en efectivo o con tarjeta de crédito)
+- Sistema: genera factura preliminar de venta desde el módulo “gestionar carrito”.
+- Usuario (cliente): elige forma de pago (en efectivo o con tarjeta de crédito).
+- Sistema:  genera factura de venta final con el pago total a realizar.
 - Caso 1 (Pago en efectivo):
-  - Sistema:  genera orden de pago.
-  - Usuario (Domiciliario):gestionar envío.
+  - Usuario (Domiciliario): realiza la gestión del envío.
   - Usuario (cliente): realiza pago contra entrega del pedido.
-  - Usuario (Vendedor): actualiza estado de la factura de venta a: pagado.
+  - Usuario (Vendedor): actualiza estado de pago de la factura de venta a: pagado.
 - Caso 2 (pago con tarjeta de crédito):
   - Sistema: Presenta interfaz de pago electrónico.
   - Usuario (cliente): Realiza pago electrónico.
-  - Sistema: actualiza estado de la factura de venta a: pagado.
-  - Usuario (Domiciliario):gestionar envío.
+  - Sistema: actualiza estado de pago de la factura de venta a: pagado.
+  - Usuario (Domiciliario): realiza la gestión del envío.
+
 
 #### Requerimientos funcionales
 
 __REQ-1-F4__: Elegir forma de pago del pedido (Efectivo o Tarjeta de crédito). 
 
-- El software debe mostrar las opciones de pago posterior a la generación de la factura de venta.
+- El software debe mostrar las opciones de pago posterior a la generación preliminar de la factura de venta.
 - En caso de no seleccionar forma de pago, el sistema no permite continuar con la transacción.
 
 __REQ-2-F4__: Calcular el valor a pagar.
 
-- De acuerdo a la forma de pago seleccionada, el sistema debe calcular nuevamente el valor a pagar, agregando cargos adicionales como impuestos y costes de envío.
-- Si la transacción se cancela, la factura de venta quedará en estado: sin pagar.
+- De acuerdo a la forma de pago seleccionada, el sistema debe calcular nuevamente el valor a pagar, agregando cargos adicionales como impuestos y costes de envío, obteniendo la factura de venta final.
 
 __REQ-3-F4__: Registrar pago del pedido.
-- Una vez se haya realizado el pago del pedido, el sistema debe registrar y efectuar el cambio de estado de la factura de venta a: pagado. En caso de ser pago contra entrega, se debe realizar el cambio de forma manual por parte del vendedor.
+
+- Una vez se haya realizado el pago del pedido, el sistema debe registrar y efectuar el cambio de estado de pago de la factura de venta a: pagado. En caso de ser pago contra entrega, se debe realizar el cambio de forma manual por parte del vendedor.
 - Si el pago no se realiza, la factura de venta no cambia de estado.
 
 ### Gestionar Envíos
