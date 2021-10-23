@@ -39,8 +39,6 @@
   - [Requerimientos no funcionales](#requerimientos-no-funcionales)
     - [Tiempo de espera](#tiempo-de-espera)
 
-
-
 ## Propósito 
 
 Sistema de gestión de ventas La 40.
@@ -49,23 +47,23 @@ La 40 es un punto de abastecimiento local cuyo objeto social es la comercializac
 
 El objetivo consiste en construir un sistema de información que permita gestionar las ventas de los productos de la organización, que abarque desde las solicitudes de pedido hasta el despacho de los productos. Para ello, se busca desarrollar una herramienta que permita el registro de las ventas, la gestión de productos, la gestión de pagos y la gestión de envíos de la mercancía, los cuales son los componentes principales que se consideran en el primer avance del sistema. 
 
-
 ## Alcance del software
 
-En el sistema de información se busca desarrollar las actividades relacionadas con la gestión de las ventas de la tienda de La 40, incluyendo la gestión de pedidos, gestión de pagos y gestión de envío de productos.
+En el sistema de información se busca desarrollar las actividades relacionadas con la gestión de las ventas de la tienda de La 40, incluyendo la gestión de pedidos, pagos y envío de productos.
 
-Por lo anteriormente mencionado, el sistema de información no realizará operaciones de reembolsos o devoluciones de pedidos, modificaciones puntuales a las ventas, buzón quejas o reclamos y/o sugerencias respecto a los pedidos o relacionados, entre otros.
+Por lo anterior, el sistema de información no realizará operaciones de reembolso o devolución de pedidos, modificaciones a las ventas, buzón, quejas o reclamos y/o sugerencias respecto a los pedidos o relacionados, entre otros.
 
 Se espera que el producto software beneficie a la tienda en su organización como punto de abastecimiento local de productos de la canasta familiar, así como en la posibilidad de la reactivación económica a través de nuevos canales digitales que se acoplen a los contenidos emergentes de las tecnologías de la información y las comunicaciones a nivel local, regional o nacional.
 
 ## Funcionalidades del producto
+
 Lista de las funcionalidades del software que se están especificando en el documento de requerimientos. Cada funcionalidad puede estar compuesta por uno o varios requerimientos funcionales de software.
 
-Aquí solo se incluye una lista numerada de las principales funcionalidades, la información detallada de requerimientos funcionales se documenta en la sección 7 de este documento.
+Aquí solo se incluye una lista numerada de las principales funcionalidades, la información detallada de requerimientos funcionales se documenta en las secciones posteriores.
 
 | Funcionalidad                                          | Requerimiento funcional                                  |
 |--------------------------------------------------------|----------------------------------------------------------|
-| Gestionar ventas                                       | Registrar venta (Facturación corriente)                  |
+| Gestionar ventas                                       | Orquestador                                              |
 | Gestionar inventario                                   | Registrar ingreso y salida de mercancía                  |
 | Gestionar pedidos                                      | Visualizar el estado actual de los pedidos               |
 |                                                        | Validar el estado actual de los pedidos                  |
@@ -93,38 +91,24 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 
 #### Descripción 
 
-Esta funcionalidad permite la gestión de los registros de las distintas transacciones que involucran a las ventas efectuadas a través del sistema; la venta consiste en el conjunto de información que relaciona el pedido, el pago y el envío. De esta forma, la funcionalidad permite manipular la información de una venta en sus diferentes fases. 
+esta funcionalidad permite la consulta, visualización y redireccionamiento a los componentes en cualquiera de las fases en la que se encuentre el proceso (vista del inventario, carrito de compras, pago, envío, pedido). 
 
 > __Prioridad__ alto
 
-
 #### Acciones iniciadoras y comportamiento esperado
 
-- Es necesaria la existencia de registros de información, total o parcial, asociados a una venta: pedido o solicitud de pedido, con cantidad y producto; monto de la venta, estado de pago y medio de pago; información del cliente; estado del envío.
-- El usuario vendedor busca la información de una venta en particular en el sistema a través de un identificador único de venta o factura. 
-- El usuario cliente inicia la compra, entonces el sistema crea el registro de la venta.
-- Se espera que el sistema registre la venta.
-- Se espera del sistema la respuesta a la consulta realizada, obteniendo la información de la venta y su estado o trazabilidad. 
-- El sistema debe otorgar alguna información que brinde valor al usuario, como la factura, la fecha y hora, la cantidad de productos, el monto, el estado del pago, la información del cliente.
+- Se espera que el sistema tenga la capacidad de redireccionar hacía el componente solicitado por el usuario.
+- Se espera que el sistema muestre la información hasta el momento registrada según la fase de compra.
+- El usuario debe seguir el flujo de compra, esto es, iniciarlo y dirigirse a un componente en particular. 
 
 #### Requerimientos funcionales
 
-__REQ-1-F1__: Registro de ventas
-- El sistema debe crear la venta con un identificador único. 
-- El sistema debe capturar y asociar a la venta la información del usuario cliente que inicia la operación.
-- El sistema debe registrar la información de fecha y hora en la que da inicio a la operación. 
-- El sistema debe almacenar toda la información relacionada al pedido y actualizar el estado de la operación.
-- El sistema debe almacenar la información del medio de pago, el monto y actualizar el estado de la operación cuando se efectúe el pago. 
-- El sistema debe almacenar la información relacionada con el despacho del pedido y actualizar el estado de la operación.
-- El sistema debe generar la factura con toda la información de la venta __una vez se ha realizado el pago__.
-- La factura debe ser generada por el sistema tomando la información de la venta asociada al usuario que la realiza.
-- El sistema debe almacenar la factura de la venta.
-
-__REQ-2-F1__: Consulta de ventas
-- El sistema debe permitir recibir el identificador único de la factura para la consulta.
-- El sistema debe buscar el registro con el identificador único ingresado.
-- El sistema debe traer la información de la factura de la venta o en su defecto la factura misma. 
-- El sistema puede permitir traer el registro de la venta para visualización de los campos sin la estructura de la factura. 
+__REQ-1-F1__: Direccionar a componentes
+- El sistema debe permitir al usuario seleccionar la opción del proceso de compra que desea visualizar.
+- El sistema debe mostrar la información del componente que el usuario selecciona o que continua en el flujo.
+- El sistema debe responder a la solicitud de direccionamiento que realiza el usuario sobre algún componente u opción en particular.
+- El sistema debe direccionar correctamente al componente y cargar la información pertinente relacionada a la acción o proceso de ejecución.
+- El sistema debe capturar la información asociada a la acción solicitada por el cliente para su consulta.
 
 ### Gestionar Inventario
 
