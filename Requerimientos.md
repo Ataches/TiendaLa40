@@ -38,6 +38,10 @@
         - [Requerimientos](#requerimientos-1)
   - [Requerimientos no funcionales](#requerimientos-no-funcionales)
     - [Tiempo de espera](#tiempo-de-espera)
+    - [Concurrencia](#concurrencia)
+    - [Pruebas](#pruebas)
+    - [Seguridad](#seguridad)
+    - [Persistencia](#persistencia)
 
 ## Propósito 
 
@@ -302,7 +306,7 @@ Para el funcionamiento de la aplicación se espera que el tiempo de respuesta se
 
 - Criterios de aceptación:
 
-La aplicación debe tener un tiempo de respuesta como máximo de 5 segundos en todas las tareas que tenga. De lo contrario, se considera que la aplicación no tiene el tiempo de respuesta esperado.
+La aplicación debe tener un tiempo de respuesta como máximo de 5 segundos en todas las tareas que tenga. De lo contrario, se considera que la aplicación no tiene el tiempo de respuesta menor o igual a 5 segundos.
 
 __REQNF-2__:
 ### Concurrencia
@@ -333,7 +337,7 @@ La aplicación debe manejar criterios mínimos de seguridad y patrones de progra
   - Utilizar protocolos de autenticación y autorización que garanticen la integridad de datos de usuario en el intercambio de información de extremo a extremo.
   - Creación y asignación de roles según el tipo de usuario.
 
-__REQNF-4__:
+__REQNF-5__:
 ### Persistencia
 
 Toda la información relacionada al sistema, que está involucrada en las operaciones de los diferentes componentes, debe ser manejada y almacenada mediante el sistema de base de datos NoSQL orientado a documentos MongoDB.
