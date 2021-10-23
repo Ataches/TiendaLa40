@@ -255,13 +255,13 @@ Asigna automáticamente el pedido y los datos asociados al mismo (número de ped
 
 #### Requerimientos funcionales
 
-__REQ-1-F5__: Asignación del pedido
+__REQ-1-F6__: Asignación del pedido
 
 - El sistema valida que el pago del pedido haya sido realizado con éxito.
 - El sistema asigna el pedido a uno de los domiciliarios de la tienda de forma automática, con base en la evaluación del domiciliario que cuente con la menor cantidad de pedidos asignados.
 - El sistema relaciona los datos de envío del pedido al domiciliario.
 
-__REQ-2-F5__: Reasignación del pedido
+__REQ-2-F6__: Reasignación del pedido
 
 - Se permitirá la reasignación del pedido a otro domiciliario o vendedor desde el usuario vendedor.
 - El sistema reasigna el pedido a otro domiciliario o al vendedor siempre y cuando el iniciador de la acción sea un usuario vendedor.
@@ -284,7 +284,7 @@ Permite al dueño de la tienda conocer la información del cliente (nombre, dire
 
 #### Requerimientos funcionales
 
-__REQ-1-F6__: Perfil de administrador
+__REQ-1-F7__: Perfil de administrador
 - Esta cuenta solo puede crearse desde una cuenta ya creada de administrador.
 - Esta cuenta tiene acceso a los datos de los clientes registrados, a todos los números de compra y al stock de productos.
 - Esta cuenta puede crear o eliminar productos.
