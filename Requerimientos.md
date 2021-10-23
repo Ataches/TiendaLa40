@@ -99,13 +99,13 @@ esta funcionalidad permite la consulta, visualización y redireccionamiento a lo
 
 > __Prioridad__ alto
 
-#### Acciones iniciadoras y comportamiento esperado
+##### Acciones iniciadoras y comportamiento esperado
 
 - Se espera que el sistema tenga la capacidad de redireccionar hacía el componente solicitado por el usuario.
 - Se espera que el sistema muestre la información hasta el momento registrada según la fase de compra.
 - El usuario debe seguir el flujo de compra, esto es, iniciarlo y dirigirse a un componente en particular. 
 
-#### Requerimientos funcionales
+##### Requerimientos funcionales
 
 __REQ-1-F1__: Direccionar a componentes
 - El sistema debe permitir al usuario seleccionar la opción del proceso de compra que desea visualizar.
