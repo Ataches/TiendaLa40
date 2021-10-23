@@ -10,32 +10,32 @@
   - [Requerimientos funcionales](#requerimientos-funcionales)
     - [Gestionar ventas](#gestionar-ventas)
       - [Descripción](#descripción)
-      - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado)
-      - [Requerimientos funcionales](#requerimientos-funcionales-1)
+        - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado)
+        - [Requerimientos funcionales](#requerimientos-funcionales-1)
     - [Gestionar Inventario](#gestionar-inventario)
       - [Descripción](#descripción-1)
       - [Acciones y comportamiento esperado](#acciones-y-comportamiento-esperado)
       - [Requerimientos funcionales](#requerimientos-funcionales-2)
-    - [Gestionar pedidos](#gestionar-pedidos)
+    - [Gestionar carrito de compra](#gestionar-carrito-de-compra)
       - [Descripción](#descripción-2)
       - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-1)
       - [Requerimientos funcionales](#requerimientos-funcionales-3)
-    - [Gestionar Pago o Transacción](#gestionar-pago-o-transacción)
+    - [Gestionar pedidos](#gestionar-pedidos)
       - [Descripción](#descripción-3)
       - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-2)
       - [Requerimientos funcionales](#requerimientos-funcionales-4)
-    - [Gestionar Envíos](#gestionar-envíos)
+    - [Gestionar Pago o Transacción](#gestionar-pago-o-transacción)
       - [Descripción](#descripción-4)
       - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-3)
       - [Requerimientos funcionales](#requerimientos-funcionales-5)
+    - [Gestionar Envíos](#gestionar-envíos)
+      - [Descripción](#descripción-5)
+      - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-4)
+      - [Requerimientos funcionales](#requerimientos-funcionales-6)
     - [Gestionar Usuarios](#gestionar-usuarios)
-      - [Definición](#definición)
-      - [__Caso 1__](#caso-1)
-        - [Acciones iniciadas, comportamiento esperado](#acciones-iniciadas-comportamiento-esperado)
-        - [Requerimientos](#requerimientos)
-      - [Caso 2](#caso-2)
-        - [Acciones iniciadoras, comportamiento esperado](#acciones-iniciadoras-comportamiento-esperado)
-        - [Requerimientos](#requerimientos-1)
+      - [Descripción](#descripción-6)
+      - [Acciones iniciadoras y comportamiento esperado](#acciones-iniciadoras-y-comportamiento-esperado-5)
+      - [Requerimientos funcionales](#requerimientos-funcionales-7)
   - [Requerimientos no funcionales](#requerimientos-no-funcionales)
     - [Tiempo de espera](#tiempo-de-espera)
     - [Concurrencia](#concurrencia)
@@ -148,11 +148,38 @@ __REQ-3-F2__: Verificar productos existentes en el inventario
 - El sistema deberá verificar que el producto existe en la cantidad deseada.
 
 
+### Gestionar carrito de compra
+
+#### Descripción 
+
+Por medio de esta funcionalidad se busca dar la posibilidad al usuario de guardar los productos de interés para dar paso a la etapa de pago de los productos.
+
+> __Prioridad__: medio
+
+#### Acciones iniciadoras y comportamiento esperado
+- Usuario (cliente): Registra los productos de interés.
+- Sistema: Guarda temporalmente la información con los productos del cliente.
+- Usuario (cliente): Una vez quiera pagar los productos selecciona el boton de compra.
+- Sistema: Verifica la existencia de los productos a comprar por el cliente y redirige a la sección de pago.
+
+#### Requerimientos funcionales
+
+__REQ-1-F3__: Guardar datos del carrito temporalmente
+- Mientras se tenga la sesión del usuario abierta se guardaran los datos de compra temporalmente.
+
+__REQ-2-F3__: Validar existencia de productos
+- Verifica con la base de datos los productos seleccionados por el cliente.
+- Redirige a la sección de pago.
+
+__REQ-2-F3__: Guardar producto en carrito de compras
+- Los productos deben tener la opción de guardar en carrito.
+- El sistema debe tener la opción de redirigir a la sección carrito de compra.
+
 ### Gestionar pedidos
 
 #### Descripción 
 
-con esta funcionalidad el vendedor podrá visualizar los pedidos hechos por los clientes, el domiciliario podrá visualizar los pedidos a su nombre y el cliente podrá visualizar y/o validar el estado de su pedido (Recibido, en preparación, pago fallido, enviado, entregado, cancelado, no entregado).
+Con esta funcionalidad el vendedor podrá visualizar los pedidos hechos por los clientes, el domiciliario podrá visualizar los pedidos a su nombre y el cliente podrá visualizar y/o validar el estado de su pedido (Recibido, en preparación, pago fallido, enviado, entregado, cancelado, no entregado).
 
 > __Prioridad__: medio
 
@@ -164,10 +191,10 @@ con esta funcionalidad el vendedor podrá visualizar los pedidos hechos por los 
 
 #### Requerimientos funcionales
 
-__REQ-1-F3__: Visualizar estado actual de los pedidos
+__REQ-1-F4__: Visualizar estado actual de los pedidos
 - El sistema muestra el listado de los pedidos para cada uno de los actores.
 
-__REQ-2-F3__: Validar el estado de los pedidos
+__REQ-2-F4__: Validar el estado de los pedidos
 - El sistema da la opción de cancelación a cada uno de los actores, para el caso del domiciliario da la opción de aceptar o rechazar la oferta.
 - El sistema de forma automática asigna a la persona domiciliaria.
 Según el estado del pedido da la opción al cliente de modificar su pedido.
@@ -197,16 +224,16 @@ Permite realizar el pago correspondiente a la compra, de acuerdo al valor de pag
 
 #### Requerimientos funcionales
 
-__REQ-1-F4__: Elegir forma de pago del pedido (Efectivo o Tarjeta de crédito). 
+__REQ-1-F5__: Elegir forma de pago del pedido (Efectivo o Tarjeta de crédito). 
 
 - El software debe mostrar las opciones de pago posterior a la generación preliminar de la factura de venta.
 - En caso de no seleccionar forma de pago, el sistema no permite continuar con la transacción.
 
-__REQ-2-F4__: Calcular el valor a pagar.
+__REQ-2-F5__: Calcular el valor a pagar.
 
 - De acuerdo a la forma de pago seleccionada, el sistema debe calcular nuevamente el valor a pagar, agregando cargos adicionales como impuestos y costes de envío, obteniendo la factura de venta final.
 
-__REQ-3-F4__: Registrar pago del pedido.
+__REQ-3-F5__: Registrar pago del pedido.
 
 - Una vez se haya realizado el pago del pedido, el sistema debe registrar y efectuar el cambio de estado de pago de la factura de venta a: pagado. En caso de ser pago contra entrega, se debe realizar el cambio de forma manual por parte del vendedor.
 - Si el pago no se realiza, la factura de venta no cambia de estado.
