@@ -69,6 +69,9 @@ Aquí solo se incluye una lista numerada de las principales funcionalidades, la 
 |--------------------------------------------------------|----------------------------------------------------------|
 | Gestionar ventas                                       | Orquestador                                              |
 | Gestionar inventario                                   | Registrar ingreso y salida de mercancía                  |
+| Gestionar carrito de compras                           | Guardar datos del carrito temporalmente                  |
+|                                                        | Guardar producto en carrito de compras                   |
+|                                                        | Validar existencia de productos                          |
 | Gestionar pedidos                                      | Visualizar el estado actual de los pedidos               |
 |                                                        | Validar el estado actual de los pedidos                  |
 | Gestionar pago o transacción                           | Elegir la forma de pago (Efectivo o Tarjeta de crédito)  |
