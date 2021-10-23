@@ -293,7 +293,7 @@ __REQ-1-F7__: Perfil de administrador
 - Esta cuenta puede crear o eliminar productos.
 - Esta cuenta puede crear o eliminar otras cuentas.
 
-__REQ-1-F7__: Perfil de usuario
+__REQ-2-F7__: Perfil de usuario
 - Para que se pueda ingresar al formulario de compra se debe seleccionar al menos un artículo en el carrito de compra.
 - Para realizar la compra se solicita el correo electrónico y contraseña, en caso de no estar registrado se solicitan demás datos como: nombre, teléfono, correo electrónico alternativo, dirección, etc.
 - Para que el usuario solicite un producto solo debe diligenciar un formulario con el correo electrónico, la ubicación y la forma de pago de los productos solicitados.
