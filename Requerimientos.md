@@ -242,54 +242,31 @@ __REQ-2-F5__: Reasignación del pedido
 
 ### Gestionar Usuarios
 
-#### Definición
+#### Descripción 
 
-Permite al dueño de la tienda conocer la información del cliente (nombre, dirección, teléfono de contacto, información de compra) que ha solicitado el pedido.
+Permite al dueño de la tienda conocer la información del cliente (nombre, dirección, teléfono de contacto, información de compra) que ha solicitado el pedido. 
 
-> __Prioridad__: alto
+> __Prioridad__ media
 
-#### __Caso 1__
-     
-    El usuario debe registrarse y tener una cuenta para realizar los pedidos.
-
-##### Acciones iniciadas, comportamiento esperado
-
-- El cliente debe poder generar un nuevo usuario
-- El cliente  debe entrar con su usuario registrado para hacer la compra.
-- El usuario puede ingresar cuando quiera y ver su información, el estado de su pedido (si aplica) y demás opciones que este tenga.
-- El usuario debe poder cambiar las credenciales y su información cuando lo desee siempre y cuando ya esté dentro de su perfil.
-- El usuario puede gestionar sus compras, o pedir nuevas desde su perfil.
-  
-##### Requerimientos
-
-__Req 1-F6__: Creación de usuario
-
-- Debe permitir crear un perfil nuevo al llenar un formulario. Esto para generar un usuario.
-
-__Req 2-F6__: Acceso de usuario
-
-- Debe permitir al usuario entrar a una interfaz donde pueda realizar los pedidos, ver el seguimiento de estos y actualizar sus datos.
- 
-__Req 3-F6__: Interfaz de usuario.
-
-- La interfaz de usuario permite acceder a diferentes herramientas únicas del tipo de usuario, el vendedor o administrador podrá acceder a la información de todos los usuarios, pero un usuario, puede acceder únicamente a su propia información.
- 
- 
-#### Caso 2
-    
-    El usuario debe llenar un formulario con información básica para el envío del pedido, pero no tendrá una cuenta en la aplicación.
-
-##### Acciones iniciadoras, comportamiento esperado
+#### Acciones iniciadoras y comportamiento esperado
 
 - El cliente debe poder llenar los datos de envío tras seleccionar los productos que desea llevar.
 - El cliente puede elegir el medio de pago que más le favorezca dentro del formulario.
-- El usuario puede hacer seguimiento a su pedido con el número de compra.
+- El usuario puede hacer seguimiento al estado de su pedido con el número de compra. 
+- El administrador puede acceder a la información de los clientes.
 
-##### Requerimientos
+#### Requerimientos funcionales
 
-__Req 1-F6.2__: El usuario no necesita un perfil:
+__REQ-1-F6__: Perfil de administrador
+- Esta cuenta solo puede crearse desde una cuenta ya creada de administrador.
+- Esta cuenta tiene acceso a los datos de los clientes registrados, a todos los números de compra y al stock de productos.
+- Esta cuenta puede crear o eliminar productos.
+- Esta cuenta puede crear o eliminar otras cuentas.
 
-- Para que el usuario solicite un producto solo debe diligenciar un formulario con nombre, teléfono, dirección y forma de pago de los productos solicitados.
+__REQ-1-F7__: Perfil de usuario
+- Para que se pueda ingresar al formulario de compra se debe seleccionar al menos un artículo en el carrito de compra.
+- Para realizar la compra se solicita el correo electrónico y contraseña, en caso de no estar registrado se solicitan demás datos como: nombre, teléfono, correo electrónico alternativo, dirección, etc.
+- Para que el usuario solicite un producto solo debe diligenciar un formulario con el correo electrónico, la ubicación y la forma de pago de los productos solicitados.
 - El formulario no se puede enviar sin rellenar los datos Nombre, teléfono, dirección y de medio de pago. 
 - El formulario debe generar y mostrar un número de compra, para que el cliente pueda hacer un seguimiento del estado del producto.
 
@@ -342,34 +319,3 @@ Toda la información relacionada al sistema, que está involucrada en las operac
 - Criterios de aceptación:
   - La información debe ser almacenada en las colecciones definidas en el modelo de datos del sistema.
   - La información debe ser manipulable a través de las diferentes operaciones del sistema de base de datos.
-
-### Gestionar Usuarios
-
-#### Descripción 
-
-Permite al dueño de la tienda conocer la información del cliente (nombre, dirección, teléfono de contacto, información de compra) que ha solicitado el pedido. 
-
-> __Prioridad__ media
-
-#### Acciones iniciadoras y comportamiento esperado
-
-- El cliente debe poder llenar los datos de envío tras seleccionar los productos que desea llevar.
-- El cliente puede elegir el medio de pago que más le favorezca dentro del formulario.
-- El usuario puede hacer seguimiento al estado de su pedido con el número de compra. 
-- El administrador puede acceder a la información de los clientes.
-
-#### Requerimientos funcionales
-
-__REQ-1-F6__: Perfil de administrador
-- Esta cuenta solo puede crearse desde una cuenta ya creada de administrador.
-- Esta cuenta tiene acceso a los datos de los clientes registrados, a todos los números de compra y al stock de productos.
-- Esta cuenta puede crear o eliminar productos.
-- Esta cuenta puede crear o eliminar otras cuentas.
-
-__REQ-1-F7__: Perfil de usuario
-- Para que se pueda ingresar al formulario de compra se debe seleccionar al menos un artículo en el carrito de compra.
-- Para realizar la compra se solicita el correo electrónico y contraseña, en caso de no estar registrado se solicitan demás datos como: nombre, teléfono, correo electrónico alternativo, dirección, etc.
-- Para que el usuario solicite un producto solo debe diligenciar un formulario con el correo electrónico, la ubicación y la forma de pago de los productos solicitados.
-- El formulario no se puede enviar sin rellenar los datos Nombre, teléfono, dirección y de medio de pago. 
-- El formulario debe generar y mostrar un número de compra, para que el cliente pueda hacer un seguimiento del estado del producto.
-
