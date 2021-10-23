@@ -341,3 +341,34 @@ Toda la información relacionada al sistema, que está involucrada en las operac
 - Criterios de aceptación:
   - La información debe ser almacenada en las colecciones definidas en el modelo de datos del sistema.
   - La información debe ser manipulable a través de las diferentes operaciones del sistema de base de datos.
+
+### Gestionar Usuarios
+
+#### Descripción 
+
+Permite al dueño de la tienda conocer la información del cliente (nombre, dirección, teléfono de contacto, información de compra) que ha solicitado el pedido. 
+
+> __Prioridad__ media
+
+#### Acciones iniciadoras y comportamiento esperado
+
+- El cliente debe poder llenar los datos de envío tras seleccionar los productos que desea llevar.
+- El cliente puede elegir el medio de pago que más le favorezca dentro del formulario.
+- El usuario puede hacer seguimiento al estado de su pedido con el número de compra. 
+- El administrador puede acceder a la información de los clientes.
+
+#### Requerimientos funcionales
+
+__REQ-1-F6__: Perfil de administrador
+- Esta cuenta solo puede crearse desde una cuenta ya creada de administrador.
+- Esta cuenta tiene acceso a los datos de los clientes registrados, a todos los números de compra y al stock de productos.
+- Esta cuenta puede crear o eliminar productos.
+- Esta cuenta puede crear o eliminar otras cuentas.
+
+__REQ-1-F7__: Perfil de usuario
+- Para que se pueda ingresar al formulario de compra se debe seleccionar al menos un artículo en el carrito de compra.
+- Para realizar la compra se solicita el correo electrónico y contraseña, en caso de no estar registrado se solicitan demás datos como: nombre, teléfono, correo electrónico alternativo, dirección, etc.
+- Para que el usuario solicite un producto solo debe diligenciar un formulario con el correo electrónico, la ubicación y la forma de pago de los productos solicitados.
+- El formulario no se puede enviar sin rellenar los datos Nombre, teléfono, dirección y de medio de pago. 
+- El formulario debe generar y mostrar un número de compra, para que el cliente pueda hacer un seguimiento del estado del producto.
+
