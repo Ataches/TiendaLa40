@@ -215,33 +215,30 @@ __REQ-3-F4__: Registrar pago del pedido.
 
 #### Descripción 
 
-Permite al cliente conocer el estado de envío en que se encuentra su pedido (Recibido, Alistamiento, Enviado, Entregado, Cancelado, No entregado), el cual es actualizado por el vendedor o Domiciliario.
+Asigna automáticamente el pedido y los datos asociados al mismo (número de pedido, nombre cliente y dirección entrega) al domiciliario. Además permite que el vendedor pueda reasignar el pedido a otro domiciliario o a un vendedor.
 
 > __Prioridad__: medio
 
 #### Acciones iniciadoras y comportamiento esperado 
 
-- El registro del envío se registra con estado inicial de: Recibido, cuando se confirma el pedido.
-- Los usuarios cliente, vendedor y domiciliario, pueden consultar en cualquier momento el estado de los envíos asociados a pedidos.
-- Los usuarios vendedor y domiciliario pueden actualizar el estado del envío y el sistema debe realizar el cambio y el registro de la hora actual.
+- El pago del pedido fue realizado con éxito.
+- El pedido se asigna automáticamente a uno de los domiciliarios de la tienda.
+- Los datos del pedido se relacionan con el domiciliario asignado.
+- El vendedor puede reasignar el pedido a otro domiciliario o a él mismo.
 
 #### Requerimientos funcionales
 
-__REQ-1-F5__: Registro del envío
+__REQ-1-F5__: Asignación del pedido
 
-- El sistema registrará el estado del envío como: recibido, cuando el pedido esté confirmado.
-- El sistema almacenará la hora del registro del envío.
-- Al ingresar el envío, todo envío estará asociado a un pedido de venta.
-- A cada envío se le asignará un identificador único, que será utilizado para identificarlo en todos los procesos subsecuentes que se realicen sobre este.
+- El sistema valida que el pago del pedido haya sido realizado con éxito.
+- El sistema asigna el pedido a uno de los domiciliarios de la tienda de forma automática, con base en la evaluación del domiciliario que cuente con la menor cantidad de pedidos asignados.
+- El sistema relaciona los datos de envío del pedido al domiciliario.
 
-__REQ-2-F5__: Seguimiento del estado del envío
+__REQ-2-F5__: Reasignación del pedido
 
-- Se permitirá el seguimiento de los envíos asociados a pedidos de compra, desde la interfaz del cliente, del vendedor y de domiciliario.
-
-__REQ-3-F5__: Actualización del estado del envío
-- Se permitirá el cambio de estado de un envío por parte del vendedor o domiciliario.
-- El sistema permitirá cambiar o actualizar el estado del envío.
-- El sistema almacenará la hora del cambio del estado del envío.
+- Se permitirá la reasignación del pedido a otro domiciliario o vendedor desde el usuario vendedor.
+- El sistema reasigna el pedido a otro domiciliario o al vendedor siempre y cuando el iniciador de la acción sea un usuario vendedor.
+- El sistema relaciona la información del envío del pedido con el domiciliario o vendedor reasignado.
 
 ### Gestionar Usuarios
 
