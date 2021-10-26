@@ -42,9 +42,10 @@
     - [Pruebas](#pruebas)
     - [Seguridad](#seguridad)
     - [Persistencia](#persistencia)
-  - [Justificación arquitectural](#justificación-arquitectural)
-    - [Microservicios](#microservicios)
-    - [¿Por qué los microservicios?](#-por-qu--los-microservicios-)
+  * [Justificación  arquitectural](#justificaci-n--arquitectural)
+    + [Microservicios](#microservicios)
+    + [¿Por qué los microservicios?](#-por-qu--los-microservicios-)
+
 
 
 ## Propósito 
