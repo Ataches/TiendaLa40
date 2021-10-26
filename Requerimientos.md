@@ -42,6 +42,10 @@
     - [Pruebas](#pruebas)
     - [Seguridad](#seguridad)
     - [Persistencia](#persistencia)
+  - [Justificación arquitectural](#justificación-arquitectural)
+    - [Microservicios](#microservicios)
+    - [¿Por qué los microservicios?](#¿Por-qué-los-microservicios?)
+
 
 ## Propósito 
 
@@ -349,3 +353,22 @@ Toda la información relacionada al sistema, que está involucrada en las operac
 - Criterios de aceptación:
   - La información debe ser almacenada en las colecciones definidas en el modelo de datos del sistema.
   - La información debe ser manipulable a través de las diferentes operaciones del sistema de base de datos.
+
+## Justificación  arquitectural
+
+### Microservicios
+
+Funcionalidades independientes descritas por sus requerimientos funcionales permiten la construcción de los diferentes módulos/componentes (microservicios) que hacen parte de la arquitectura. 
+
+Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con lo cual será mantenible al momento de añadir nuevas funcionalidades.
+
+### ¿Por qué los microservicios?
+
+- Independencia entre micro aplicaciones. Cada micro aplicación es una funcionalidad identificada en los requerimientos funcionales. 
+- Fácil de despliegue entre micro servicios.
+- Capacidad de mantenimiento mejorada: cada servicio es relativamente pequeño y, por lo tanto, es más fácil de entender y cambiar. 
+- Mejor capacidad de prueba: los servicios son más pequeños y más rápidos de probar 
+- Mejor implementación: los servicios se pueden implementar de forma independiente de su estructura o lenguaje de programación.
+- Permite organizar el esfuerzo de desarrollo en torno a varios equipos autónomos. 
+- Permite utilizar microservicios externos como lo son gestión de pagos (por ejemplo PSE, PayPal - pasarelas de pago) o gestión de usuarios (por ejemplo Firebase REST API, Google auth service).
+- Comunicación entre microservicios por medio de formatos XML o JSON.
