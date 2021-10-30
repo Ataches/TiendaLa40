@@ -386,7 +386,10 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
 
 - Gestionar inventario       
 - Gestionar carrito de compras 
-- Gestionar pedidos                             
+  - Gracias al uso de microservicios, esta sección permite desde cualquier item en el listado de productos tener la opción de añadir al carrito con lo que se logrará el envío a dicha sección por medio de la comunicación entre los microservicios.
+- Gestionar pedidos                     
+  - Para lograr la comunicación entre los distintos microservicios es conveniente el uso de este tipo de arquitectura ya que permite que esta funcionalidad reciba los datos necesarios para consultar a la base de datos y/o modificar los datos presentes en la consulta del usuario sin necesidad de volver a modificar nuevamente todos los campos de un pedido ya realizado.
+  - Permite a los usuarios ingresar a una funcionalidad especifica de consulta de los estados de la orden.        
 - Gestionar pago o transacción
   - La arquitectura de microservicios permite consumir APIs externas o de terceros a través del API Gateway encargado de manejar dicha conexión; este proceso disminuye los requerimientos funcionales a atender y hereda responsabilidades. En el caso de la gestión de pagos o transacciones, se puede hacer consumo de una pasarela de pagos para el manejo de transacciones monetarias en el caso de elegir la opción de “pago por internet”, liberando al sistema de la responsabilidad de controlar dicho flujo. Además, el consumo de esta API implica no tener que realizar mantenimientos posteriores.  
   - El módulo de gestión de pagos visto como un microservicio permitiría efectuar tanto el pago contra entrega como el pago por internet exponiendo estos métodos a través de endpoints específicos, lo cual lo hace totalmente independiente de otros microservicios, facilitando su desarrollo, la realización de pruebas y el mantenimiento del mismo.
