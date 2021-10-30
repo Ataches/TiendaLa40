@@ -384,7 +384,10 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
   <img width="600" height="350" src="https://user-images.githubusercontent.com/24207969/139554712-244740cb-5573-47b1-98ad-2d87c269f927.jpg">
 </p>
 
-- Gestionar inventario       
+- Gestionar inventario      
+  - Con el uso de microservicios, es posible tener un listado de productos que se encuentran o no disponibles en el inventario
+  - Es posible tener servicios específicos para cada una de las operaciones que se hagan en el inventario, como Añadir, Editar o Eliminar un producto
+  - Al tener un BD relacional y una arquitectura por microservicios es posible pensar a futuro en escalabilidad y transaccionalidad para más de una tienda. 
 - Gestionar carrito de compras 
   - Gracias al uso de microservicios, esta sección permite desde cualquier item en el listado de productos tener la opción de añadir al carrito con lo que se logrará el envío a dicha sección por medio de la comunicación entre los microservicios.
 - Gestionar pedidos                     
