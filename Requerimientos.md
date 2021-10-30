@@ -384,4 +384,12 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
   - El módulo de gestión de pagos visto como un microservicio permitiría efectuar tanto el pago contra entrega como el pago por internet exponiendo estos métodos a través de endpoints específicos, lo cual lo hace totalmente independiente de otros microservicios, facilitando su desarrollo, la realización de pruebas y el mantenimiento del mismo.
 
 - Gestionar envíos   
+  - Se presenta independecia entre la micro aplicación asociada al envío de un pedido que se relaciona con las funcionalidades de gestor usuario y gestor pedido.
+  - La manera de realizar los despliegues asociados a la micro aplicación de envíos se puede realizar de manera independiente, siempre y cuando se hallan desplegado las funcionalidades asociadas a gestor pedido y gestor usuairo.
+  - Al contar con una micro aplicación de gestión envío independiente a las demás funcionalidades, comprender el core y la lógica del negocio que esta maneja hace que el mantenimiento de este servicio sea fácil de realizar.
+  - Probar la funcionalidad del microservicio relacionado a la gestión de envíos se puede realizar de maner ágil teniendo en cuenta que su funcionalidad es específica.
+  - La implementación del microservicio que gestiona los envíos y asocia el repartidor y el pedido, se podrá implementar de manera ágil y desacoplada.
+  - El microservicio al ejercer una funcionalidad específica y compacta, permite organizar el equipo de desarrollo partiendo de una planeación clara, para posteriormente implementarla, probarla y desplegarla.
+  - La comunicación con los microservicios asociados al gestor de usuarios y de inventarios se realizará por medio de fortmatos JSON.
+  
 - Gestionar usuarios   
