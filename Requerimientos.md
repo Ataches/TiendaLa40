@@ -380,7 +380,9 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
   - Esta funcionalidad de gestión de ventas, cuyo requerimiento funcional REQ-1-F1 consiste en "direccionar a componentes", se justifica en el Api Gateway, a modo de orquestador, al caracterizarse por ser la puerta de enlace disponible en la interfaz de programación de aplicaciones que actúa como un único punto de entrada para el grupo definido de microservicios. Cada uno de los micreservicios son las diferentes funcionalidades identificadas: vista del inventario, carrito de compras, pago, envío, pedido.
   - La imagen a continuación representa la funcionalidad de gestionar ventas que es vista como Api Gateway dentro de la arquitectura de microservicios ha ser empleada en la concepción del sistema.
 
-![API-Gateway-Diagram](https://user-images.githubusercontent.com/24207969/139554712-244740cb-5573-47b1-98ad-2d87c269f927.jpg){ width=20% }
+<p align="center">
+  <img width="600" height="200" src="https://user-images.githubusercontent.com/24207969/139554712-244740cb-5573-47b1-98ad-2d87c269f927.jpg">
+</p>
 
 - Gestionar inventario       
 - Gestionar carrito de compras 
