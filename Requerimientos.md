@@ -375,7 +375,13 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
 - Comunicación entre microservicios por medio de formatos XML o JSON.
 
 ### ¿Por qué los microservicios desde cada una de las funcionalidades?
-- Gestionar ventas    
+- Gestionar ventas
+  - Dada la funcionalidad identificada a través de los requerimientos funcionales que hacen referencia a lo que se denomina "gestión de ventas", que involucra el proceso de redireccionamiento hacía los diferentes componentes del sistema, así como la visualización, consulta y consumo de los mismos, se justifica el uso de la arquitectura de microservicios en la característica que provee el patrón indispensable "Api Gateway".
+  - Esta funcionalidad de gestión de ventas, cuyo requerimiento funcional REQ-1-F1 consiste en "direccionar a componentes", se justifica en el Api Gateway, a modo de orquestador, al caracterizarse por ser la puerta de enlace disponible en la interfaz de programación de aplicaciones que actúa como un único punto de entrada para el grupo definido de microservicios. Cada uno de los micreservicios son las diferentes funcionalidades identificadas: vista del inventario, carrito de compras, pago, envío, pedido.
+  - La imagen a continuación representa la funcionalidad de gestionar ventas que es vista como Api Gateway dentro de la arquitectura de microservicios ha ser empleada en la concepción del sistema.
+
+![API-Gateway-Diagram](https://user-images.githubusercontent.com/24207969/139554263-5f19ef09-2805-49e0-8dab-e4b7f75042f5.jpg)
+
 - Gestionar inventario       
 - Gestionar carrito de compras 
 - Gestionar pedidos                             
@@ -384,12 +390,4 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
   - El módulo de gestión de pagos visto como un microservicio permitiría efectuar tanto el pago contra entrega como el pago por internet exponiendo estos métodos a través de endpoints específicos, lo cual lo hace totalmente independiente de otros microservicios, facilitando su desarrollo, la realización de pruebas y el mantenimiento del mismo.
 
 - Gestionar envíos   
-  - Se presenta independecia entre la micro aplicación asociada al envío de un pedido que se relaciona con las funcionalidades de gestor usuario y gestor pedido.
-  - La manera de realizar los despliegues asociados a la micro aplicación de envíos se puede realizar de manera independiente, siempre y cuando se hallan desplegado las funcionalidades asociadas a gestor pedido y gestor usuairo.
-  - Al contar con una micro aplicación de gestión envío independiente a las demás funcionalidades, comprender el core y la lógica del negocio que esta maneja hace que el mantenimiento de este servicio sea fácil de realizar.
-  - Probar la funcionalidad del microservicio relacionado a la gestión de envíos se puede realizar de maner ágil teniendo en cuenta que su funcionalidad es específica.
-  - La implementación del microservicio que gestiona los envíos y asocia el repartidor y el pedido, se podrá implementar de manera ágil y desacoplada.
-  - El microservicio al ejercer una funcionalidad específica y compacta, permite organizar el equipo de desarrollo partiendo de una planeación clara, para posteriormente implementarla, probarla y desplegarla.
-  - La comunicación con los microservicios asociados al gestor de usuarios y de inventarios se realizará por medio de fortmatos JSON.
-  
 - Gestionar usuarios   
