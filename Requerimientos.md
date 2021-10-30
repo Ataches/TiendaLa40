@@ -381,7 +381,7 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
   - La imagen a continuación representa la funcionalidad de gestionar ventas que es vista como Api Gateway dentro de la arquitectura de microservicios ha ser empleada en la concepción del sistema.
 
 <p align="center">
-  <img width="600" height="400" src="https://user-images.githubusercontent.com/24207969/139554712-244740cb-5573-47b1-98ad-2d87c269f927.jpg">
+  <img width="600" height="350" src="https://user-images.githubusercontent.com/24207969/139554712-244740cb-5573-47b1-98ad-2d87c269f927.jpg">
 </p>
 
 - Gestionar inventario       
