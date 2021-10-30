@@ -373,3 +373,12 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
 - Permite organizar el esfuerzo de desarrollo en torno a varios equipos autónomos. 
 - Permite utilizar microservicios externos como lo son gestión de pagos (por ejemplo PSE, PayPal - pasarelas de pago) o gestión de usuarios (por ejemplo Firebase REST API, Google auth service).
 - Comunicación entre microservicios por medio de formatos XML o JSON.
+
+### ¿Por qué los microservicios desde cada una de las funcionalidades?
+- Gestionar ventas    
+- Gestionar inventario       
+- Gestionar carrito de compras 
+- Gestionar pedidos                             
+- Gestionar pago o transacción    
+- Gestionar envíos   
+- Gestionar usuarios   
