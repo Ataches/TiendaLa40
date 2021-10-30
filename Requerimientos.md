@@ -379,6 +379,8 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
 - Gestionar inventario       
 - Gestionar carrito de compras 
 - Gestionar pedidos                             
-- Gestionar pago o transacción    
+- Gestionar pago o transacción
+  - La arquitectura de microservicios permite consumir APIs externas o de terceros a través del API Gateway encargado de manejar dicha conexión; este proceso disminuye los requerimientos funcionales a atender y hereda responsabilidades. En el caso de la gestión de pagos o transacciones, se puede hacer consumo de una pasarela de pagos para el manejo de transacciones monetarias en el caso de elegir la opción de “pago por internet”, liberando al sistema de la responsabilidad de controlar dicho flujo. Además, el consumo de esta API implica no tener que realizar mantenimientos posteriores.  
+
 - Gestionar envíos   
 - Gestionar usuarios   
