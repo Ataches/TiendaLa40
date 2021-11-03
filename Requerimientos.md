@@ -407,4 +407,7 @@ Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con 
   - La comunicación con los microservicios asociados al gestor de usuarios y de inventarios se realizará por medio de fortmatos JSON.
 
 
-- Gestionar usuarios   
+- Gestionar usuarios  
+  - Gracias al uso de microservicios, es posible tener un listado de los clientes y de su información requerida para la compra y el envio de los productos.
+  - Es posible tener servicios especificos para ñas operaciones que se hagan con los usuarios tales como Añadir, Editar, Eliminar una cuenta.
+  - Al tener una BD se puede revisar el historial de compras del usuario al relacionarlo con la gestión de pedidos o la gestión de pagos a través de un API Gateway, facilitando el desarollo, la realización de pruebas y el mantenieminto.    
