@@ -8,3 +8,10 @@
 - Juan Sebastián Sánchez
 - Brayan Leonardo Sierra
 - Ivan Daniel Villegas
+
+## Diagrama de infraestructura
+
+
+## Diagrama de componentes
+
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Ataches/TiendaLa40/Components_diagram.puml)
