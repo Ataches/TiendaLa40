@@ -42,6 +42,11 @@
     - [Pruebas](#pruebas)
     - [Seguridad](#seguridad)
     - [Persistencia](#persistencia)
+  * [Justificación  arquitectural](#justificaci-n--arquitectural)
+    + [Microservicios](#microservicios)
+    + [¿Por qué los microservicios?](#-por-qu--los-microservicios-)
+
+
 
 ## Propósito 
 
@@ -293,7 +298,7 @@ __REQ-1-F7__: Perfil de administrador
 - Esta cuenta puede crear o eliminar productos.
 - Esta cuenta puede crear o eliminar otras cuentas.
 
-__REQ-1-F7__: Perfil de usuario
+__REQ-2-F7__: Perfil de usuario
 - Para que se pueda ingresar al formulario de compra se debe seleccionar al menos un artículo en el carrito de compra.
 - Para realizar la compra se solicita el correo electrónico y contraseña, en caso de no estar registrado se solicitan demás datos como: nombre, teléfono, correo electrónico alternativo, dirección, etc.
 - Para que el usuario solicite un producto solo debe diligenciar un formulario con el correo electrónico, la ubicación y la forma de pago de los productos solicitados.
@@ -349,3 +354,60 @@ Toda la información relacionada al sistema, que está involucrada en las operac
 - Criterios de aceptación:
   - La información debe ser almacenada en las colecciones definidas en el modelo de datos del sistema.
   - La información debe ser manipulable a través de las diferentes operaciones del sistema de base de datos.
+
+## Justificación  arquitectural
+
+### Microservicios
+
+Funcionalidades independientes descritas por sus requerimientos funcionales permiten la construcción de los diferentes módulos/componentes (microservicios) que hacen parte de la arquitectura. 
+
+Dado al tamaño del aplicativo no se espera muchos micro servicios a futuro con lo cual será mantenible al momento de añadir nuevas funcionalidades.
+
+### ¿Por qué los microservicios?
+
+- Independencia entre micro aplicaciones. Cada micro aplicación es una funcionalidad identificada en los requerimientos funcionales. 
+- Fácil de despliegue entre micro servicios.
+- Capacidad de mantenimiento mejorada: cada servicio es relativamente pequeño y, por lo tanto, es más fácil de entender y cambiar. 
+- Mejor capacidad de prueba: los servicios son más pequeños y más rápidos de probar 
+- Mejor implementación: los servicios se pueden implementar de forma independiente de su estructura o lenguaje de programación.
+- Permite organizar el esfuerzo de desarrollo en torno a varios equipos autónomos. 
+- Permite utilizar microservicios externos como lo son gestión de pagos (por ejemplo PSE, PayPal - pasarelas de pago) o gestión de usuarios (por ejemplo Firebase REST API, Google auth service).
+- Comunicación entre microservicios por medio de formatos XML o JSON.
+
+### ¿Por qué los microservicios desde cada una de las funcionalidades?
+- Gestionar ventas
+  - Dada la funcionalidad identificada a través de los requerimientos funcionales que hacen referencia a lo que se denomina "gestión de ventas", que involucra el proceso de redireccionamiento hacía los diferentes componentes del sistema, así como la visualización, consulta y consumo de los mismos, se justifica el uso de la arquitectura de microservicios en la característica que provee el patrón indispensable "Api Gateway".
+  - Esta funcionalidad de gestión de ventas, cuyo requerimiento funcional REQ-1-F1 consiste en "direccionar a componentes", se justifica en el Api Gateway, a modo de orquestador, al caracterizarse por ser la puerta de enlace disponible en la interfaz de programación de aplicaciones que actúa como un único punto de entrada para el grupo definido de microservicios. Cada uno de los micreservicios son las diferentes funcionalidades identificadas: vista del inventario, carrito de compras, pago, envío, pedido.
+  - La imagen a continuación representa la funcionalidad de gestionar ventas que es vista como Api Gateway dentro de la arquitectura de microservicios ha ser empleada en la concepción del sistema.
+
+<p align="center">
+  <img width="600" height="350" src="https://user-images.githubusercontent.com/24207969/139554712-244740cb-5573-47b1-98ad-2d87c269f927.jpg">
+</p>
+
+- Gestionar inventario      
+  - Con el uso de microservicios, es posible tener un listado de productos que se encuentran o no disponibles en el inventario
+  - Es posible tener servicios específicos para cada una de las operaciones que se hagan en el inventario, como Añadir, Editar o Eliminar un producto
+  - Al tener un BD relacional y una arquitectura por microservicios es posible pensar a futuro en escalabilidad y transaccionalidad para más de una tienda. 
+- Gestionar carrito de compras 
+  - Gracias al uso de microservicios, esta sección permite desde cualquier item en el listado de productos tener la opción de añadir al carrito con lo que se logrará el envío a dicha sección por medio de la comunicación entre los microservicios.
+- Gestionar pedidos                     
+  - Para lograr la comunicación entre los distintos microservicios es conveniente el uso de este tipo de arquitectura ya que permite que esta funcionalidad reciba los datos necesarios para consultar a la base de datos y/o modificar los datos presentes en la consulta del usuario sin necesidad de volver a modificar nuevamente todos los campos de un pedido ya realizado.
+  - Permite a los usuarios ingresar a una funcionalidad especifica de consulta de los estados de la orden.        
+- Gestionar pago o transacción
+  - La arquitectura de microservicios permite consumir APIs externas o de terceros a través del API Gateway encargado de manejar dicha conexión; este proceso disminuye los requerimientos funcionales a atender y hereda responsabilidades. En el caso de la gestión de pagos o transacciones, se puede hacer consumo de una pasarela de pagos para el manejo de transacciones monetarias en el caso de elegir la opción de “pago por internet”, liberando al sistema de la responsabilidad de controlar dicho flujo. Además, el consumo de esta API implica no tener que realizar mantenimientos posteriores.  
+  - El módulo de gestión de pagos visto como un microservicio permitiría efectuar tanto el pago contra entrega como el pago por internet exponiendo estos métodos a través de endpoints específicos, lo cual lo hace totalmente independiente de otros microservicios, facilitando su desarrollo, la realización de pruebas y el mantenimiento del mismo.
+
+- Gestionar envíos   
+  - Se presenta independecia entre la micro aplicación asociada al envío de un pedido que se relaciona con las funcionalidades de gestor usuario y gestor pedido.
+  - La manera de realizar los despliegues asociados a la micro aplicación de envíos se puede realizar de manera independiente, siempre y cuando se hallan desplegado las funcionalidades asociadas a gestor pedido y gestor usuairo.
+  - Al contar con una micro aplicación de gestión envío independiente a las demás funcionalidades, comprender el core y la lógica del negocio que esta maneja hace que el mantenimiento de este servicio sea fácil de realizar.
+  - Probar la funcionalidad del microservicio relacionado a la gestión de envíos se puede realizar de maner ágil teniendo en cuenta que su funcionalidad es específica.
+  - La implementación del microservicio que gestiona los envíos y asocia el repartidor y el pedido, se podrá implementar de manera ágil y desacoplada.
+  - El microservicio al ejercer una funcionalidad específica y compacta, permite organizar el equipo de desarrollo partiendo de una planeación clara, para posteriormente implementarla, probarla y desplegarla.
+  - La comunicación con los microservicios asociados al gestor de usuarios y de inventarios se realizará por medio de fortmatos JSON.
+
+
+- Gestionar usuarios  
+  - Gracias al uso de microservicios, es posible tener un listado de los clientes y de su información requerida para la compra y el envio de los productos.
+  - Es posible tener servicios especificos para ñas operaciones que se hagan con los usuarios tales como Añadir, Editar, Eliminar una cuenta.
+  - Al tener una BD se puede revisar el historial de compras del usuario al relacionarlo con la gestión de pedidos o la gestión de pagos a través de un API Gateway, facilitando el desarollo, la realización de pruebas y el mantenieminto.    
