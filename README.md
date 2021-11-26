@@ -14,4 +14,4 @@
 
 ## Diagrama de componentes
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Ataches/TiendaLa40/Components_diagram.puml)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Ataches/TiendaLa40/main/Components_diagram.puml)
